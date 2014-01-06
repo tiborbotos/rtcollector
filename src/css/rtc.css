@@ -1,0 +1,106 @@
+div#rtc-collector-userstories, div#rtc-collector-tasks {
+    display: none;
+}
+
+div.tasks-progress-by-user div.person-name {
+    text-transform: uppercase;
+    width: 128px;
+    color: #666;
+    text-align: center;
+    font-size: 13px;
+}
+
+div.tasks-progress-by-user div.avatar {
+    width: 128px;
+    height: 128px;
+    background-image: url('../img/person-avatar-employee-128.png');
+    display: inline-block;
+}
+
+div.tasks-progress-by-user div.avatar.person {
+    background-image: url('../img/person-avatar-employee-128.png');
+}
+div.tasks-progress-by-user div.avatar.team {
+    background-image: url('../img/person-avatar-user-group-128.png');
+}
+div.tasks-progress-by-user div.avatar.police {
+    background-image: url('../img/person-avatar-police-man-128.png');
+}
+div.tasks-progress-by-user div.avatar.chef {
+    background-image: url('../img/person-avatar-chef-128.png');
+}
+
+div.progress-icon {
+    width: 128px;
+    height: 128px;
+    display: inline-block;
+}
+div.progress-label {
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: #999;
+    display: none;
+}
+div.progress-icon.info {
+    background-image: url('../img/tasks-state-info-laugh-128.png');
+}
+div.progress-icon.nothingtosay {
+    background-image: url('../img/tasks-state-default-speechless-128.png');
+}
+div.progress-icon.danger {
+    background-image: url('../img/tasks-state-danger-cry-128.png');
+}
+div.progress-icon.success {
+    background-image: url('../img/tasks-state-success-cool-128.png');
+}
+div.progress-icon.warning {
+    background-image: url('../img/tasks-state-warning-worried-128.png');
+}
+
+div.member-stat {
+  margin-top: 25px;
+}
+
+
+div.tasks-progress-by-user div.progress.global-tasks-progress {
+    margin-top: 25px;
+}
+
+div.tasks-progress-by-user ul.task-groups-details {
+    -webkit-padding-start: 0px;
+    font-size: 18px;
+    vertical-align: top;
+    display: inline-block;
+    list-style-type: none;
+}
+
+ul.task-groups-details .task-group-summary span.label {
+    min-width: 90px;
+    display: inline-block;
+}
+
+ul.task-groups-details .task-group-summary span {
+    display: inline-block;
+    font-weight: bold;
+}
+
+ul.task-groups-details .task-group-summary .task-type-summary-value {
+    width: 45px;
+    text-align: right;
+    font-weight: bold;
+}
+
+ul.task-groups-details .task-group-summary .task-type-summary-value:after {
+    font-weight: normal;
+    color: #AAAAAA;
+    padding-left: 5px;
+}
+
+ul.task-groups-details .task-group-summary .task-type-summary-value.hours:after {
+    content: 'h';
+}
+
+ul.task-groups-details .task-group-summary .task-type-summary-value.count:after {
+    content: 'pc';
+}
+

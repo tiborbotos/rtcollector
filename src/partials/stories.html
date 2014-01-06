@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="well">
+        <div ng-hide="stat">
+            <ng-include src="partials/incl_loader.html"></ng-include>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Stories ({{stories.length}})</h2>
+            </div>
+
+        <div ng-repeat="story in stories">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="lead">[{{story.id}}] {{story.summary}}</span>
+                    <span class="label label-danger" style="vertical-align: text-top" ng-show="{{story.blocked}}">blocked</span>
+                    <span class="pull-right">{{story.status}}, {{story.workItemType}}</span>
+                </div>
+            </div>
+            <hr class="col-md-12" style="color: #10B8C7; margin: 0" />
+            <div class="row">
+                <div class="col-md-2">
+                    state
+                </div>
+                <div class="col-md-6">
+                    <div class="progress global-tasks-progress">
+                        <div class="progress-bar progress-bar-warning" style="width: {{story.stats.tasks.percent.open}}%">
+                            <span title="{{story.stats.tasks.percent.open}}% Open">{{story.stats.tasks.percent.open}}% Open</span>
+                        </div>
+                        <div class="progress-bar progress-bar-info" style="width: {{story.stats.tasks.percent.inprogress}}%">
+                            <span title="{{story.stats.tasks.percent.inprogress}}% In progress">{{story.stats.tasks.percent.inprogress}}% In progress</span>
+                        </div>
+                        <div class="progress-bar {{storyBarSuccessClass(story)}}" style="width: {{story.stats.tasks.percent.tasksDone}}%">
+                            <span title="{{story.stats.tasks.percent.tasksDone}}% Done">{{story.stats.tasks.percent.tasksDone}}% Done</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <span class="pull-right label label-default" title="hours">{{story.stats.timeSpentOnStory}} / {{story.stats.maxTimeOnStory}}</span>
+                    <span class="pull-right">&nbsp;</span>
+                    <span class="pull-right label label-default" title="story points">{{story.stats.storyPointSpentOnStory}} / {{story.storyPoints}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul style="list-style: none;">
+                        <li ng-repeat="alert in story.alerts">
+                            <span class="glyphicon {{getAlertIcon(alert)}}"></span>
+                            <span class="{{getAlertTextClass(alert)}}" title="{{alert.severity}}"><strong>{{alert.description}}</strong></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+<!--             <div class="col-md-6"> -->
+<!--                 <div class="pull-right"> -->
+<!--                     <a href="#" data-toggle="tooltip" title="UI: create services"><span class="label label-default">[12315]</span></a> -->
+<!--                     <span class="label label-default" data-toggle="tooltip" title="UI: create services">[11584]</span> -->
+<!--                     <span class="label label-default" data-toggle="tooltip" title="UI: create services">[11524]</span> -->
+<!--                     <span class="label label-info" data-toggle="tooltip" title="UI: create services">[11525]</span> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--             <div class="col-md-6"> -->
+<!--                 <span class="label label-default">[12315]</span> -->
+<!--                 <span class="label label-default">[11584]</span> -->
+<!--                 <span class="label label-info">[11524]</span> -->
+<!--                 <span class="label label-success">[11525]</span> -->
+<!--             </div> -->
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $(function () { // init tooltips
+      $("[a]").tooltip();
+    });
+</script>
+</div>

@@ -1,0 +1,31 @@
+{
+  "name": "RTC-Collector",
+  "description": "RTC-Collector",
+  "version": "0.1",
+  "permissions": [
+    "activeTab", "https://ccm.at.phs.emea.vwg/ccm/web/projects/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": ["src/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Start RTC Collector",
+	"default_icon": "icons/icon16.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://example.com/*"],
+	  "run_at": "document_end",
+      "js": ["src/rtc.js"],
+	  "css": []
+    }
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "manifest_version": 2
+}

@@ -1,0 +1,61 @@
+<div class="row tasks-progress-by-user">
+    <div class="col-md-2">
+        <div class="person-name">
+            <span>{{stat.name}}</span>
+        </div>
+        <div class="avatar {{stat.avatar}}"></div>
+        <!-- OR avatar person -->
+    </div>
+    <div class="col-md-8">
+        <div class="progress global-tasks-progress">
+            <div class="progress-bar progress-bar-warning" style="width: {{stat.open.percent}}%">
+                <span title="{{stat.open.percent}}% Open">{{stat.open.percent}}% Open</span>
+            </div>
+            <div class="progress-bar progress-bar-info" style="width: {{stat.inprogress.percent}}%">
+                <span title="{{stat.inprogress.percent}}% In progress">{{stat.inprogress.percent}}% In progress</span>
+            </div>
+            <!--                             <div class="progress-bar progress-bar-danger" style="width: 1%"> -->
+            <!--                                 <span title="1% In progress - Late">1% In progress - Late</span> -->
+            <!--                             </div> -->
+            <div class="progress-bar progress-bar-success" style="width: {{stat.done.percent}}%">
+                <span title="{{stat.done.percent}}% Done">{{stat.done.percent}}% Done</span>
+            </div>
+        </div>
+
+        <ul class="task-groups-details">
+            <li>
+                <div class="task-group-summary">
+                    <span class="label label-warning">OPEN</span> <span
+                        class="task-type-summary-value count">{{stat.open.count}}</span> <span
+                        class="task-type-summary-value hours">{{stat.open.hours}}</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="task-group-summary">
+                    <span class="label label-info">IN PROG</span> <span
+                        class="task-type-summary-value count">{{stat.inprogress.count}}</span> <span
+                        class="task-type-summary-value hours">{{stat.inprogress.hours}}</span>
+                    <span>/</span> <span
+                        class="task-type-summary-value hours">{{stat.inprogress.estimated}}</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="task-group-summary">
+                    <span class="label label-success">CLOSED</span> <span
+                        class="task-type-summary-value count">{{stat.done.count}}</span>
+                    <span class="task-type-summary-value hours">{{stat.done.hours}}</span>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="col-md-2">
+        <div class="progress-label">
+            <span>{{stat.feelings}}</span>
+        </div>
+        <div class="progress-icon {{stat.feelings}}"></div>
+    </div>
+</div>
